@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Snake and Ladder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<video class="video-background" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4">
+</video>
+
+<div class="video-overlay"></div>
+
+<div class="game-container">
+
+    <div class="top-bar">
+        <span id="currentDate">Loading date...</span>
+        <span id="currentTime">Loading time...</span>
+    </div>
+
+    <header class="header">
+
+        <div class="title">
+            <h1>🐍 Snake & Ladder 🪜</h1>
+            <p>3D Multiplayer Board Game</p>
+        </div>
+
+        <div class="settings">
+
+            <label for="playerCount">
+                Players:
+            </label>
+
+            <select id="playerCount">
+                <option value="2">2 Players</option>
+                <option value="3">3 Players</option>
+                <option value="4" selected>4 Players</option>
+            </select>
+
+            <button id="newGameButton">
+                New Game
+            </button>
+
+        </div>
+
+        <div id="turn" class="turn">
+            Player 1's Turn
+        </div>
+
+    </header>
+
+
+    <main class="game-area">
+
+        <!-- GAME BOARD -->
+        <section class="board-section">
+
+            <div class="board-3d">
+
+                <div id="board" class="board"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <aside class="right-panel">
+
+            <!-- DICE -->
+            <div class="controls">
+
+                <div class="dice-area">
+
+                    <div id="dice" class="dice-cube">
+
+                        <div class="dice-face face-front">
+                            <span id="frontNumber">1</span>
+                        </div>
+
+                        <div class="dice-face face-back">
+                            <span>2</span>
+                        </div>
+
+                        <div class="dice-face face-right">
+                            <span>3</span>
+                        </div>
+
+                        <div class="dice-face face-left">
+                            <span>4</span>
+                        </div>
+
+                        <div class="dice-face face-top">
+                            <span>5</span>
+                        </div>
+
+                        <div class="dice-face face-bottom">
+                            <span>6</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="dice-label">
+                    D8
+                </div>
+
+                <button id="rollButton" class="roll-button">
+                    🎲 Roll D8
+                </button>
+
+                <button id="restartButton" class="restart-button">
+                    Restart
+                </button>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="info-box">
+
+                <h2>Game Information</h2>
+
+                <div id="message" class="message">
+                    Roll the D8 to start!
+                </div>
+
+
+                <div class="players-section">
+
+                    <h3>♟ Player Position</h3>
+
+                    <div id="playersInfo"></div>
+
+                </div>
+
+
+                <div class="map-section">
+
+                    <h3>🪜 Ladders</h3>
+
+                    <div class="map-list">
+
+                        <span>4 → 25</span>
+                        <span>9 → 31</span>
+                        <span>20 → 38</span>
+                        <span>28 → 55</span>
+                        <span>40 → 59</span>
+                        <span>51 → 67</span>
+                        <span>63 → 81</span>
+                        <span>71 → 91</span>
+                        <span>74 → 88</span>
+                        <span>82 → 96</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="map-section">
+
+                    <h3>🐍 Snakes</h3>
+
+                    <div class="map-list">
+
+                        <span>17 → 7</span>
+                        <span>23 → 5</span>
+                        <span>29 → 11</span>
+                        <span>37 → 16</span>
+                        <span>42 → 22</span>
+                        <span>54 → 34</span>
+                        <span>58 → 39</span>
+                        <span>62 → 19</span>
+                        <span>65 → 45</span>
+                        <span>73 → 52</span>
+                        <span>84 → 64</span>
+                        <span>89 → 48</span>
+                        <span>92 → 88</span>
+                        <span>95 → 75</span>
+                        <span>98 → 78</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <footer>
+
+        <span>
+            Snake & Ladder
+        </span>
+
+        <span>
+            Reach exactly 100 to win
+        </span>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
